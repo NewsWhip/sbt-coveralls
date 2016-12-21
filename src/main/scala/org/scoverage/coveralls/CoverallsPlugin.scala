@@ -47,7 +47,7 @@ object CoverallsPlugin extends AutoPlugin with CommandSupport {
     coverallsFile := crossTarget.value / "coveralls.json",
     coberturaFile := crossTarget.value / ("coverage-report" + File.separator + "cobertura.xml"),
     coverallsSourceRoots := sourceDirectories.all(aggregateFilter).value,
-    gitRepoDir := ".."
+    gitRepoDir := "."
   )
 
   val aggregateFilter = ScopeFilter(inAggregates(ThisProject), inConfigurations(Compile)) // must be outside of the 'coverageAggregate' task (see: https://github.com/sbt/sbt/issues/1095 or https://github.com/sbt/sbt/issues/780)
